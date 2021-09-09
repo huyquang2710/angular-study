@@ -8,11 +8,14 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { FormsModule } from '@angular/forms';
 import { StarComponent } from './components/star/star.component';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminRoutes } from './routes/admin.routing';
+import { LoginComponent } from './components/login/login.component';
 
 //cấu hình route
 const routes: Routes = [
   { path: "productList", component: ProductListComponent },
-  { path: "productDetail/:id", component: ProductDetailComponent }
+  { path: "productDetail/:id", component: ProductDetailComponent },
+  { path: "login", component: LoginComponent }
 
 ]
 
@@ -21,12 +24,15 @@ const routes: Routes = [
     AppComponent,
     ProductListComponent,
     ProductDetailComponent,
-    StarComponent
+    StarComponent,
+    LoginComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AdminRoutes,
     RouterModule.forRoot(routes)
   ],
   providers: [],
