@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-head">
+    Product_list
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Product Code</th>
+          <th>Product Name</th>
+          <th>Star Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products" >
+          <td scope="row">{{product.productCode}}</td>
+          <td>{{product.productName}}</td>
+          <td><app-star [rating] = 4 (ratingClicked)="changeStarRating($event)" ></app-star></td>
+          <td>Action</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
