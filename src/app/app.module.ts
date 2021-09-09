@@ -7,6 +7,14 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { FormsModule } from '@angular/forms';
 import { StarComponent } from './components/star/star.component';
+import { Routes, RouterModule } from '@angular/router';
+
+//cấu hình route
+const routes: Routes = [
+  { path: "productList", component: ProductListComponent },
+  { path: "productDetail", component: ProductDetailComponent }
+
+]
 
 @NgModule({
   declarations: [
@@ -18,7 +26,8 @@ import { StarComponent } from './components/star/star.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
