@@ -9,6 +9,7 @@
           <th>Product Code</th>
           <th>Product Name</th>
           <th>Star Rating</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -16,7 +17,10 @@
           <td scope="row">{{product.productCode}}</td>
           <td>{{product.productName}}</td>
           <td><app-star [rating] = 4 (ratingClicked)="changeStarRating($event)" ></app-star></td>
-          <td>Action</td>
+          <td>
+            View 
+            <a [routerLink]="['/productDetail/' + product.productCode]" >Edit </a>
+            Delete</td>
         </tr>
       </tbody>
     </table>

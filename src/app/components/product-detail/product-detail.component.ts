@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../common/product';
 
 @Component({
@@ -10,9 +11,13 @@ import { Product } from '../../common/product';
 export class ProductDetailComponent implements OnInit {
   product: Product; 
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     this.product = new Product("","");
-   }
+
+    //có id mới cho
+    if(route.snapshot.params["id"])
+      this.product.productCode = route.snapshot.params["id"];
+  }
 
    changeDetail(form: NgForm) {
      console.log(form.value);

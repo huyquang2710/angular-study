@@ -12,7 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 //cấu hình route
 const routes: Routes = [
   { path: "productList", component: ProductListComponent },
-  { path: "productDetail", component: ProductDetailComponent }
+  { path: "productDetail/:id", component: ProductDetailComponent }
 
 ]
 

@@ -2,7 +2,7 @@
   <form action="" (ngSubmit)="changeDetail(detailForm)" #detailForm="ngForm" >
     <div class="form-group">
       <label for="productCode">Product Code</label>
-      <input type="text" ngModel value="{{product.productCode}}"
+      <input type="text" [(ngModel)]="product.productCode"
         class="form-control" name="productCode" id="productCode" aria-describedby="helpId" placeholder="Product Code">
       <small id="productHelpId" class="form-text text-muted">Product Code Required</small>
     </div>
